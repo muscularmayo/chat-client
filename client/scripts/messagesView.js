@@ -5,7 +5,7 @@ var MessagesView = {
   initialize: function() {
     Parse.readAll(function(data) {
       //in this portion we make it give us messages
-      for (var i = 0; i < data.results.length; i ++) {
+      for (var i = data.results.length - 1; i >= 0; i --) {
         //console.log(data.results[i]);
         //console.log(data);
         //$('#chats').append(`<p>${data.results[i].text} by ${data.results[i].username}</p>`);
@@ -17,7 +17,7 @@ var MessagesView = {
 
   renderMessage: function(message) {
     //each individual obj
-    console.log(message.username, message.text);
+    //console.log(message.username, message.text);
     // ($('<div>' + message.username + message.text + '</div>')).appendTo($('#chats'))
 
     message.username = message.username || 'undefined';
@@ -25,7 +25,7 @@ var MessagesView = {
     message.text = message.text || 'undefined';
     message.text = message.text.escape();
 
-    $('#chats').append(MessageView.render(message));
+    $('#chats').prepend(MessageView.render(message));
 
   },
   //<script>-&ltscript&gt

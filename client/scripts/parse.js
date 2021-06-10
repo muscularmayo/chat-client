@@ -12,9 +12,12 @@ var Parse = {
       contentType: 'application/json',
       success: function (data) {
         console.log('chatterbox: Message sent');
+        console.log(data);
+        //function to run on successfully executing 'POST'
       },
       error: function (data) {
         // See: https://developer.mozilla.org/en-US/docs/Web/API/console.error
+
         console.error('chatterbox: Failed to send message', data);
       }
     });
