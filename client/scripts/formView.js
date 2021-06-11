@@ -9,10 +9,11 @@ var FormView = {
   handleSubmit: function(event) {
     // Stop the browser from submitting the form
     event.preventDefault();
+    var dropdownRoom = $('#rooms select option:selected').text()
     var message = {
       'username': App.username,
       'text': $('#message').val(),
-      'roomname': 'lobby'
+      'roomname': dropdownRoom
     };
     console.log(message);
     Parse.create(message);
