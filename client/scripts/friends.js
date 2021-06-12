@@ -8,7 +8,8 @@ var Friends = {
       userName = userName.trim();
       console.log('CLICK:', userName);
       //Friends.myFriend(userName);
-      alert('Handler for .click is called');
+      // alert('Handler for .click is called');
+      $('#chats').empty();
 
       Parse.readAll(function(data) {
 
